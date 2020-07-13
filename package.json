@@ -1,6 +1,6 @@
 {
   "name": "@mikhailfarberov/react-smart-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "main": "dist/index.js",
   "files": [
@@ -16,6 +16,7 @@
     "url": "https://github.com/mikhailfarberov/react-smart-table/issues"
   },
   "dependences": {
+    "bootstrap": "^4.4.1",
     "bootstrap-daterangepicker": "^3.0.5",
     "react-bootstrap-daterangepicker": "^4.1.0",
     "react-widgets": "^4.5.0"
@@ -24,7 +25,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "bootstrap": "^4.4.1",
     "reactstrap": "^8.4.1"
   },
   "eslintConfig": {

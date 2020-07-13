@@ -9,10 +9,9 @@
     "react-scripts": "^3.4.0",
     "bootstrap-daterangepicker": "^3.0.5",
     "react-bootstrap-daterangepicker": "^4.1.0",
-    "react-widgets": "^4.5.0",
     "reactstrap": "^8.4.1",
     "moment": "^2.24.0",
-    "bootstrap": "^4.4.1"
+    "@mikhailfarberov/react-smart-table": "^1.0.1"
   },
   "scripts": {
     "build": "react-scripts build",
