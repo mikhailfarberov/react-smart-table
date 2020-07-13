@@ -100,7 +100,7 @@ The SmartTable component accepts the following properties:
 * isLoading - show loading spinner. Optional. Default false.
 * onClick - an event fired when a row is clicked. Optional
 * onFilter - ane event fired when filter values were changes. Optional
-```
+
 
 ## License
 react-smart-table is released under the [MIT](https://github.com/mikhailfarberov/react-smart-table/blob/master/LICENSE) license.
