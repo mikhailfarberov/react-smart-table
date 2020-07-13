@@ -1,4 +1,4 @@
-# react-smart-table - a React component to enrich table functionality with filters
+# react-smart-table - a React component to improve table functionality with filters
 
 ![npm](https://img.shields.io/npm/v/@mikhailfarberov/react-smart-table)
 ![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-smart-table/peer/react)
