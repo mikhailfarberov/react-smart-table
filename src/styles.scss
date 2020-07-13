@@ -1,0 +1,515 @@
+$font-weight-light:             300         !default;
+$font-weight-normal:            400         !default;
+$font-weight-semi:              600         !default;
+$font-weight-bold:              700         !default;
+$font-size-small:              0.8571em     !default;
+$font-size-h1:                 3.5em        !default; // ~ 49px
+$font-size-h2:                 2.5em        !default; // ~ 35px
+$font-size-h3:                 2em          !default; // ~ 28px
+$font-size-h4:                 1.714em      !default; // ~ 24px
+$font-size-h5:                 1.57em       !default; // ~ 22px
+$font-size-h6:                 1em          !default; // ~ 14px
+$font-size-base:               14px         !default;
+$default-color:              #888 !default;
+$white-color:                #FFFFFF !default;
+$danger-color:               rgb(250, 112, 131) !default;
+$success-color:              rgb(40, 162, 25) !default;
+$white-bg:                   #FFFFFF !default;
+$transparent-bg:             transparent !default;
+$light-gray:                 #E3E3E3 !default;
+$btn-round-radius:             3px         !default;
+$black-color:                #2c2c2c !default;
+$primary-color:              rgb(14, 56, 74) !default;
+$border-radius-large:           0.25rem     !default;
+$padding-base-vertical:        .5rem !default;
+$padding-base-horizontal:      .7rem !default;
+$padding-btn-vertical:         11px !default;
+$padding-btn-horizontal:       22px !default;
+$padding-input-vertical:        11px !default;
+$padding-input-horizontal:      19px !default;
+$opacity-gray-3:             rgba(222,222,222, .3) !default;
+$opacity-gray-5:             rgba(222,222,222, .5) !default;
+$opacity-gray-8:             rgba(222,222,222, .8) !default;
+$border-thin:                1px !default;
+$border-thick:               2px !default;
+$light-gray:                 #E3E3E3 !default;
+$medium-gray:                #DDDDDD !default;
+$dark-gray:                  #9A9A9A !default;
+
+@mixin input-size($padding-vertical, $padding-horizontal){
+    padding: $padding-vertical $padding-horizontal;
+}
+
+@mixin transition-input-focus-color() {
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+            box-shadow: $shadow;
+}
+
+.table{
+    min-width: 960px;
+    
+    .img-wrapper{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .img-row{
+      max-width: 60px;
+      width: 60px;
+    }
+
+    .form-check{
+        margin: 0;
+
+        & label .form-check-sign::before,
+        & label .form-check-sign::after{
+            top: -17px;
+            left: 4px;
+        }
+    }
+
+    .btn{
+        margin: 0;
+    }
+
+    small,.small{
+      font-weight: 300;
+    }
+
+    .card-tasks .card-body &{
+        margin-bottom: 0;
+
+        > thead > tr > th,
+        > tbody > tr > th,
+        > tfoot > tr > th,
+        > thead > tr > td,
+        > tbody > tr > td,
+        > tfoot > tr > td{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+
+   > thead > tr > th{
+       border-bottom-width: 1px;
+       font-size: 1.45em;
+       font-weight: $font-weight-light;
+       border: 0;
+   }
+
+   .radio,
+   .checkbox{
+       margin-top: 0;
+       margin-bottom: 0;
+       padding: 0;
+       width: 15px;
+
+       .icons{
+           position: relative;
+       }
+
+        label{
+            &:after,
+            &:before{
+                top: -17px;
+                left: -3px;
+            }
+        }
+   }
+   > thead > tr > th,
+   > tbody > tr > th,
+   > tfoot > tr > th,
+   > thead > tr > td,
+   > tbody > tr > td,
+   > tfoot > tr > td{
+       padding: 12px 7px;
+       vertical-align: middle;
+   }
+
+   .th-description{
+       max-width: 150px;
+   }
+   .td-price{
+       font-size: 26px;
+       font-weight: $font-weight-light;
+       margin-top: 5px;
+       position: relative;
+       top: 4px;
+       text-align: right;
+   }
+   .td-total{
+        font-weight: $font-weight-bold;
+        font-size: $font-size-h5;
+        padding-top: 20px;
+        text-align: right;
+    }
+
+   .td-actions .btn{
+    margin: 0px;
+    }
+
+    > tbody > tr{
+        position: relative;
+    }
+}
+
+.form-control {
+    background-color: $transparent-bg;
+    border: 1px solid $light-gray;
+    border-radius: $btn-round-radius;
+    color: $black-color;
+    line-height: normal;
+    font-size: $font-size-small;
+    @include transition-input-focus-color();
+    @include box-shadow(none);
+    height: unset;
+
+
+    &:focus{
+        border: 1px solid $primary-color;
+        @include box-shadow(none);
+        outline: 0 !important;
+        color: $black-color;
+
+        & + .input-group-append .input-group-text,
+        & ~ .input-group-append .input-group-text,
+        & + .input-group-prepend .input-group-text,
+        & ~ .input-group-prepend .input-group-text{
+            border: 1px solid $primary-color;
+            border-left: none;
+            background-color: $transparent-bg;
+        }
+    }
+
+    .has-success &,
+    .has-error &,
+    .has-success &:focus,
+    .has-error &:focus{
+        @include box-shadow(none);
+    }
+
+    .has-danger &,
+    .has-success &{
+        &.form-control-success,
+        &.form-control-danger{
+            background-image: none;
+        }
+    }
+
+    & + .form-control-feedback{
+        border-radius: $border-radius-large;
+        font-size: $font-size-base;
+        margin-top: -7px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        vertical-align: middle;
+    }
+
+    .open &{
+        border-radius: $border-radius-large $border-radius-large 0 0;
+        border-bottom-color: transparent;
+    }
+
+    & + .input-group-append .input-group-text,
+    & + .input-group-prepend .input-group-text{
+        background-color: $white-bg;
+    }
+}
+
+.input-group-append .input-group-text,
+.input-group-prepend .input-group-text {
+    background-color: transparent;
+    border: 1px solid $light-gray;
+    border-radius: $btn-round-radius;
+    color: $default-color;
+
+    & i{
+      opacity: .5;
+    }
+
+    @include transition-input-focus-color();
+
+    .has-danger.input-group-focus &{
+        background-color: $white-color;
+    }
+
+    .has-success &{
+        background-color: $white-color;
+    }
+    .has-danger .form-control:focus + &{
+        color: $danger-color;
+    }
+    .has-success .form-control:focus + &{
+        color: $success-color;
+    }
+
+    & + .form-control,
+    & ~ .form-control{
+        @include input-size($padding-base-vertical - 1, $padding-base-horizontal);
+        padding-left: 18px;
+    }
+
+    i{
+        width: 17px;
+    }
+}
+
+.input-group-append,
+.input-group-prepend{
+  margin: 0;
+}
+
+
+.input-group-append .input-group-text{
+  border-left: none;
+}
+.input-group-prepend .input-group-text{
+  border-right: none;
+}
+
+.input-group-focus{
+    .input-group-prepend .input-group-text,
+    .input-group-append .input-group-text{
+        background-color: $white-bg;
+        border-color: $primary-color;
+    }
+
+    &.no-border{
+        .input-group-prepend .input-group-text,
+        .input-group-append .input-group-text{
+            background-color: $opacity-gray-5;
+        }
+    }
+}
+
+.input-group,
+.form-group{
+    margin-bottom: 10px;
+    position: relative;
+
+    .form-control-static{
+        margin-top: 9px;
+    }
+}
+.input-group[disabled]{
+    .input-group-prepend .input-group-text,
+    .input-group-append .input-group-text{
+        background-color: $light-gray;
+    }
+}
+
+.input-group .form-control:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child){
+    border-radius: $btn-round-radius;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0 none;
+}
+
+.input-group .form-control:first-child,
+.input-group-btn:first-child > .dropdown-toggle,
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-right: 0 none;
+}
+.input-group .form-control:last-child,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child) {
+    border-left: 0 none;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: $light-gray;
+    color: $default-color;
+    cursor: not-allowed;
+}
+
+.input-group-btn .btn{
+    border-width: $border-thin;
+    padding: $padding-btn-vertical  $padding-base-horizontal;
+}
+.input-group-btn .btn-default:not(.btn-fill){
+    border-color: $medium-gray;
+}
+
+.input-group-btn:last-child > .btn{
+    margin-left: 0;
+}
+textarea.form-control{
+    max-width: 100%;
+    max-height: 80px;
+    padding: 10px 10px 0 0;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    border-radius: 0;
+    line-height: 2;
+
+    &:focus,
+    &:active{
+        border-left: none;
+        border-top: none;
+        border-right: none;
+    }
+}
+
+.has-success,
+.has-danger{
+
+    &.form-group .form-control,
+    &.form-group.no-border .form-control{
+        padding-right: $padding-input-horizontal + 21;
+    }
+}
+
+.form.form-newsletter .form-group{
+    float: left;
+    width: 78%;
+    margin-right: 2%;
+    margin-top: 9px;
+}
+
+.input-group .input-group-btn{
+    padding: 0 12px;
+}
+
+// Input files - hide actual input - requires specific markup in the sample.
+.form-group input[type=file] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.form-text{
+    font-size: $font-size-small;
+}
+
+select.form-control {
+    height :35px;
+}
+
+.smart-table {
+    th, td {
+        padding: 8px 8px !important;
+    }
+
+    td.loading {
+        text-align: center;
+        color: rgb(42, 167, 0);
+        font-size: 10px;
+    }
+
+    tbody {
+        tr:not(.empty):hover {
+            background-color: rgba(40, 162, 25, 0.2);
+        }
+
+        tr.clickable {
+            cursor: pointer;
+        }
+
+        tr.invalid {
+            background-color: rgba(251, 203, 208, 0.6) !important;
+        }
+
+        tr.collapsed {
+            background-color: rgba(240, 240, 240, 0.6) !important;
+        }
+
+        tr.collapsed {
+            ul {
+                list-style-type: none;
+
+                li {
+                    padding: 3px 0;
+                }
+            }
+        }
+    }
+
+    .smart-table-head {
+        background-color: rgb(40, 162, 25);
+        th {
+            color: #fff;
+            font-size: 1.1em;
+            padding: 7px 8px;
+            font-weight: bold;
+        }
+    }
+
+    .smart-table-filter {
+        background-color: #edeff2;
+        th {
+            padding: 5px 8px;
+            font-size: 1em;
+            font-weight:  normal;
+        }
+        input.form-control, .input-group-append {
+            background-color: #fff;
+            height: 36px;
+            border-color: #ccc;
+            border-style: solid;
+            border-radius: 3px;
+        }
+        .input-group {
+            margin-bottom: 0px;
+
+            input.form-control {
+                background-color: #fff;
+                height: 36px;
+                border-width: 1px 0 1px 1px;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .input-group-append {
+                border-width: 1px 1px 1px 0;
+                border-radius: 0 3px 3px 0;
+                padding: 1px 0 0 0;
+            }
+
+            .input-group-text {
+                border: 0px !important;
+                cursor: pointer;
+            }
+        }
+
+        .rw-widget-input { 
+            display: block; 
+            height: 36px !important;
+            max-height: 72px !important; 
+            overflow-y: scroll;
+            border-radius: 3px;
+        }
+        .rw-multiselect-taglist {
+            vertical-align: top;
+            margin-top: 3px;
+        }
+
+        .rw-multiselect-tag {
+            background-color: rgb(42, 167, 0);
+            border: 1px solid rgb(40, 162, 25);
+            color: #fff;
+            margin-top: 2px !important;
+            font-size: 0.7em;
+        }
+
+        .react-bootstrap-daterangepicker-container {
+            width: 100%;
+        }
+    }
+}
