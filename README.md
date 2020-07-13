@@ -1,10 +1,10 @@
 # react-smart-table - a React component to enrich table functionality with filters
 
 ![npm](https://img.shields.io/npm/v/@mikhailfarberov/react-smart-table)
-![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-org-chart/peer/react)
-![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-org-chart/peer/react-dom)
-![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-org-chart/peer/prop-types)
-![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-org-chart/peer/reactstrap)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-smart-table/peer/react)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-smart-table/peer/react-dom)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-smart-table/peer/prop-types)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/@mikhailfarberov/react-smart-table/peer/reactstrap)
 
 react-smart provides a simple and stylish organizational chart React component. It supports different chart node attributes (see #configuration) and multi-root tree (see #demo).
 
