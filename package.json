@@ -35,8 +35,8 @@
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
-    "node-sass": "^4.13.1",
-    "react-scripts": "^3.4.0"
+    "node-sass": "^9.0.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "build": "npm run build-css && babel src --out-file dist/index.js",
